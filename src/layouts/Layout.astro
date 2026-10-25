@@ -29,6 +29,26 @@ const { title, description, lang = 'zh-CN' } = Astro.props;
     <link rel="alternate" hreflang="zh-CN" href="https://sfbb.github.io/" />
     <link rel="alternate" hreflang="en" href="https://sfbb.github.io/en/" />
     <link rel="alternate" hreflang="x-default" href="https://sfbb.github.io/" />
+
+    <!-- Language Auto Detection & User Preference -->
+    <script is:inline>
+      (function() {
+        var path = window.location.pathname;
+        if (path === '/' || path === '/index.html') {
+          var savedLang = localStorage.getItem('preferred-lang');
+          if (savedLang === 'en') {
+            window.location.replace('/en/');
+            return;
+          }
+          if (!savedLang) {
+            var browserLang = navigator.language || (navigator.languages && navigator.languages[0]) || '';
+            if (browserLang && !browserLang.toLowerCase().startsWith('zh')) {
+              window.location.replace('/en/');
+            }
+          }
+        }
+      })();
+    </script>
     
     <!-- Open Graph / Meta -->
     <meta property="og:title" content={title} />

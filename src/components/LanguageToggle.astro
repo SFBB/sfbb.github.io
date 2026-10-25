@@ -14,12 +14,17 @@ const { currentLang } = Astro.props;
   </span>
 
   {currentLang === 'zh' ? (
-    <span class="rounded-full bg-sky-950 px-2.5 py-0.5 font-semibold text-sky-300 border border-sky-800/50 shadow-sm">
+    <button
+      type="button"
+      onclick="localStorage.setItem('preferred-lang', 'zh')"
+      class="rounded-full bg-sky-950 px-2.5 py-0.5 font-semibold text-sky-300 border border-sky-800/50 shadow-sm cursor-default"
+    >
       中文
-    </span>
+    </button>
   ) : (
     <a
       href="/"
+      onclick="localStorage.setItem('preferred-lang', 'zh')"
       class="rounded-full px-2.5 py-0.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors"
       aria-label="切换到中文页面"
     >
@@ -30,12 +35,17 @@ const { currentLang } = Astro.props;
   <span class="text-slate-600">/</span>
 
   {currentLang === 'en' ? (
-    <span class="rounded-full bg-sky-950 px-2.5 py-0.5 font-semibold text-sky-300 border border-sky-800/50 shadow-sm">
+    <button
+      type="button"
+      onclick="localStorage.setItem('preferred-lang', 'en')"
+      class="rounded-full bg-sky-950 px-2.5 py-0.5 font-semibold text-sky-300 border border-sky-800/50 shadow-sm cursor-default"
+    >
       EN
-    </span>
+    </button>
   ) : (
     <a
       href="/en/"
+      onclick="localStorage.setItem('preferred-lang', 'en')"
       class="rounded-full px-2.5 py-0.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors"
       aria-label="Switch to English version"
     >
