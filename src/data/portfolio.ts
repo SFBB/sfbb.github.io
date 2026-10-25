@@ -111,6 +111,22 @@ export const portfolioData: {
 
   projects: [
     {
+      title: "cowatcher extension",
+      subtitle: "浏览器扩展",
+      description: "增强Netflix, TVer, YouTube观影体验的助手，AI字幕实时翻译，观影记录，单字学习",
+      highlights: [
+        "DDD设计，强约束的adapter接口设计",
+        "优先使用原生字幕，支持Ollama/Openrouter/Google Translate翻译，支持角色名翻译术语表约束",
+        "逆向串流平台原生数据，保证记录的准确",
+        "去平台化，方便port到各种其它浏览器平台",
+        "Fail fast，显示定义，专治js/ts屎山"
+      ],
+      technologies: ["Typescript", "chrome-extension", "lint"],
+      github: "https://github.com/cowatcher-app/cowatcher-extension",
+      demo: "https://cowatcher-app.github.io/cowatcher-extension/",
+      featured: true
+    },
+    {
       title: "Financial Simulation",
       subtitle: "量化策略回测脚本",
       description: "基于uv和python实现的量化策略回测和实盘脚本",
