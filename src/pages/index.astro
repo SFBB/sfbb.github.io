@@ -3,14 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import ExperienceCard from '../components/ExperienceCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import { portfolioData } from '../data/portfolio';
+import LanguageToggle from '../components/LanguageToggle.astro';
+import { portfolioZh as portfolioData } from '../data/portfolio.zh';
 
-const { personal, navItems, experiences, projects, skillCategories, education } = portfolioData;
+const { personal, navItems, experiences, projects, skillCategories, education, ui } = portfolioData;
 ---
 
 <Layout 
   title={`${personal.name} | ${personal.title}`} 
   description={`${personal.name} 的个人主页与技术作品集。${personal.tagline}`}
+  lang="zh-CN"
 >
   <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
     <div class="lg:flex lg:justify-between lg:gap-4">
@@ -18,6 +20,11 @@ const { personal, navItems, experiences, projects, skillCategories, education } 
       <!-- ================= LEFT COLUMN: HERO & STICKY NAV ================= -->
       <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
         <div>
+          <!-- Language Toggle -->
+          <div class="mb-6">
+            <LanguageToggle currentLang="zh" />
+          </div>
+
           <h1 class="text-4xl font-bold tracking-tight text-slate-100 sm:text-5xl">
             <a href="/">{personal.name}</a>
           </h1>
