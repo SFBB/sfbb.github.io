@@ -1,0 +1,27 @@
+{
+  "name": "sfbb.github.io",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Personal Portfolio & Project Showcase",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "bash deploy.sh"
+  },
+  "keywords": [
+    "portfolio",
+    "resume",
+    "github-pages",
+    "astro",
+    "tailwind"
+  ],
+  "author": "sfbb",
+  "license": "MIT",
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.5",
+    "astro": "^4.16.19",
+    "tailwindcss": "^3.4.19"
+  }
+}
